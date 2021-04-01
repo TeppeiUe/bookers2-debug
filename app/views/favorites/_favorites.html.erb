@@ -1,6 +1,6 @@
   <% if book.favorited_by?(current_user) %>
     <p>
-      <%= link_to book_favorites_path(book), method: :delete do %>
+      <%= link_to book_favorites_path(book), method: :delete, class: "text-danger" do %>
         ♥<%= book.favorites.count %>
       <% end %>
     </p>
