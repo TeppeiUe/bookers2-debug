@@ -6,11 +6,27 @@
         <%= render "devise/shared/error_messages", resource: resource %>
         <div class="field">
           <%= f.label :name %><br />
-          <%= f.text_field :name, autofocus: true, class: "name" %>
+          <%= f.text_field :name, autofocus: true %>
         </div>
         <div class="field">
           <%= f.label :email %><br />
-          <%= f.text_field :email, autofocus: true, class: "email" %>
+          <%= f.text_field :email, autofocus: true %>
+        </div>
+        <div class="field">
+          <%= f.label :postal_code %><br />
+          <%= f.text_field :postal_code, autofocus: true %>
+        </div>
+        <div class="field">
+          <%= f.label :prefecture_code %><br />
+          <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name %>
+        </div>
+        <div class="field">
+          <%= f.label :adress_city %><br />
+          <%= f.text_field :adress_city, autofocus: true %>
+        </div>
+        <div class="field">
+          <%= f.label :adress_street %><br />
+          <%= f.text_field :adress_street, autofocus: true %>
         </div>
         <div class="field">
           <%= f.label :password %>
