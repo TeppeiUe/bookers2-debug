@@ -28,4 +28,17 @@ class User < ApplicationRecord
   def following?(user)
     following.include?(user)
   end
+
+  def self.search_for(how, value)
+    if how == "match"
+      User.where(name: value)
+    elsif how == "forward"
+      User.where('name LIKE ?', "#{value}")
+    elsif how == "backward"
+      User.where('name LIKE ?', "#{value}%")
+    elsif how == "partical"
+      User.where('name LIKE ?', "%#{value}%")
+    end
+  end
+
 end
