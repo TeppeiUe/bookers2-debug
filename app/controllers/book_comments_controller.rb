@@ -5,13 +5,11 @@ class BookCommentsController < ApplicationController
     @book_comment = current_user.book_comments.new(book_comment_params)
     @book_comment.book_id = @book.id
     @book_comment.save
-    render :index
   end
 
   def destroy
     BookComment.find_by(id: params[:id], book_id: params[:book_id]).destroy
     @book = Book.find(params[:book_id])
-    render :index
   end
 
   private
