@@ -1,5 +1,14 @@
-<h1>User#thanks_mail</h1>
-
-<p>
-  <%= @greeting %>, find me in app/views/user_mailer/thanks_mail.html.erb
-</p>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <h1><%= @user.name %> 様</h1>
+    <hr>
+    <p>会員登録が完了しました。</p>
+    <p>ユーザー名: <%= @user.name %></p>
+    <p>メールアドレス: <%= @user.email %></p>
+    <hr>
+  </body>
+</html>
