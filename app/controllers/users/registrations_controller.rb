@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-     UserMailer.thanks_mail(@user).deliver
+    UserMailer.thanks_mail(@user).deliver
   end
 
   # GET /resource/edit
