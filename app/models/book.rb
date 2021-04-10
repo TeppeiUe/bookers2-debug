@@ -22,4 +22,9 @@ class Book < ApplicationRecord
 		end
 	end
 
+	def self.data_reset
+		Book.delete_all
+		p 'delete all'
+	end
+
 end
