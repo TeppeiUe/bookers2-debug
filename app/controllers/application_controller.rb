@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!, except: [:top, :about]
-	before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
+
   def after_sign_in_path_for(resource)
     user_path(current_user.id)
   end
@@ -17,7 +18,7 @@ class ApplicationController < ActionController::Base
       :postal_code,
       :prefecture_code,
       :adress_city,
-      :adress_street
-      ])
+      :adress_street,
+    ])
   end
 end

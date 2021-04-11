@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {
-    :registrations => 'users/registrations'
-   }
-  resources :users,only: [:show,:index,:edit,:update] do
+    :registrations => 'users/registrations',
+  }
+  resources :users, only: [:show, :index, :edit, :update] do
     resource :relationships, only: [:create, :destroy]
     member do
       get :following, :followers

@@ -4,6 +4,7 @@ class RelationshipsController < ApplicationController
     current_user.follow(user)
     redirect_back(fallback_location: root_path)
   end
+
   def destroy
     user = User.find(params[:user_id])
     current_user.unfollow(user)

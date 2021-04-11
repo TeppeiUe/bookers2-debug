@@ -1,5 +1,4 @@
 class SearchController < ApplicationController
-
   def search
     @value = params[:value]
     @model = params[:model]
